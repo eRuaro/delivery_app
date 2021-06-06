@@ -115,6 +115,8 @@ class RecentOrders extends StatelessWidget {
         Container(
           height: 120,
           child: ListView.builder(
+            padding: EdgeInsets.only(left: 10.0),
+            physics: BouncingScrollPhysics(),
             //set scrolling to horizontal
             scrollDirection: Axis.horizontal,
             itemCount: currentUser.orders.length,
