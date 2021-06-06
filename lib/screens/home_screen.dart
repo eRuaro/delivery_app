@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:delivery_app/data/data.dart';
+import 'package:delivery_app/widgets/recent_orders.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -57,7 +58,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-          )
+          ),
+          RecentOrders(),
         ],
       ),
     );
