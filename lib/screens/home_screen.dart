@@ -1,6 +1,7 @@
 import 'package:delivery_app/models/restaurant.dart';
 import 'package:flutter/material.dart';
 import 'package:delivery_app/screens/restaurant_screen.dart';
+import 'package:delivery_app/screens/cart_screen.dart';
 import 'package:delivery_app/data/data.dart';
 import 'package:delivery_app/widgets/recent_orders.dart';
 import 'package:delivery_app/widgets/rating_stars.dart';
@@ -113,7 +114,12 @@ class _HomeScreenState extends State<HomeScreen> {
         // similar to trailing 
         actions: [
           TextButton(
-            onPressed: () {},
+            onPressed: () => Navigator.push(
+              context, 
+              MaterialPageRoute(
+                builder: (_) => CartScreen(),
+                ),
+              ),
             child: Text(
               'Cart (${currentUser.cart.length})',
               style: TextStyle(
