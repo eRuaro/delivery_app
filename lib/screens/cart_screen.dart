@@ -30,7 +30,7 @@ class _CartScreenState extends State<CartScreen> {
                     ),
                     borderRadius: BorderRadius.circular(15),
                   ),
-                ), 
+                ),
                 //Wrap Column with container and expanded for textoverflow
                 Expanded(
                   child: Container(
@@ -58,6 +58,59 @@ class _CartScreenState extends State<CartScreen> {
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Container(
+                          width: 100,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(
+                              width: 0.8,
+                              color: Colors.black54,
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              GestureDetector(
+                                child: Text(
+                                  '-',
+                                  style: TextStyle(
+                                    color: Theme.of(context).primaryColor,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                onTap: () {},
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              Text(
+                                order.quantity.toString(),
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              GestureDetector(
+                                child: Text(
+                                  '+',
+                                  style: TextStyle(
+                                    color: Theme.of(context).primaryColor,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                onTap: () {},
+                              ),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -65,9 +118,18 @@ class _CartScreenState extends State<CartScreen> {
               ],
             ),
           ),
+          Container(
+            margin: EdgeInsets.all(10),
+            child: Text(
+              '\$${order.quantity * order.food.price}',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
         ],
       ),
-
     );
   }
 
