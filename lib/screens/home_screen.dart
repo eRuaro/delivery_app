@@ -110,6 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
           icon: Icon(Icons.account_circle),
           iconSize: 30.0,
         ),
+        // similar to trailing 
         actions: [
           TextButton(
             onPressed: () {},
