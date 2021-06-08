@@ -15,6 +15,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
   _buildMenuItem(Food menuItem) {
     return Center(
       child: Stack(
+        alignment: Alignment.center,
         children: [
           Container(
             height: 175,
@@ -54,7 +55,48 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                 ],
               ),
             ),
-          )
+          ),
+          Positioned(
+            bottom: 65.0,
+            child: Column(
+              children: [
+                Text(
+                  menuItem.name,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1.2,
+                  ),
+                ),
+                Text(
+                  '\$${menuItem.price}',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1.2,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Positioned(
+            bottom: 10.0,
+            right: 10.0,
+            child: Container(
+              decoration: BoxDecoration(
+                  color: Theme.of(context).primaryColor,
+                  borderRadius: BorderRadius.circular(30),
+                ),
+              child: IconButton(
+                  onPressed: (){}, 
+                  icon: Icon(Icons.add),
+                  iconSize: 30.0,
+                  color: Colors.white,
+                ),
+          ),
+          ),
         ],
       ),
     );
@@ -188,6 +230,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
           child: GridView.count(
             //2x2 column
             padding: EdgeInsets.all(10),
+            physics: BouncingScrollPhysics(),
             crossAxisCount: 2,
             children: List.generate(
               widget.restaurant.menu.length,
